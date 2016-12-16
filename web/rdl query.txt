@@ -1,0 +1,44 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type" : "call_to_actions",
+  "thread_state" : "existing_thread",
+  "call_to_actions":[
+    {
+      "type":"postback",
+      "title":"Home",
+      "payload":"Home"
+    },
+    {
+      "type":"postback",
+      "title":"Lessons",
+      "payload":"Lessons"
+    },
+    {
+      "type":"postback",
+      "title":"Account Center",
+      "payload":"Account Center"
+    },
+  ]
+}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAAPCcsph9SEBACkbwa3THaRHSHyInMiA8JCci34UnmzPi0hkwyZBYTIovAoOHTjRuDFZBZCMizMTk4ZC4rV9vrVcrt4tddovUeVWLk261aH9EiqM4JrfFec4ExxCphnzkEqFKU6lxblF4qiXasleMPUgSHbiD9v45qiN1D5UtwZDZD"
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type":"call_to_actions",
+  "thread_state":"new_thread",
+  "call_to_actions":[
+    {
+      "payload":"Get Started"
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAAPCcsph9SEBACkbwa3THaRHSHyInMiA8JCci34UnmzPi0hkwyZBYTIovAoOHTjRuDFZBZCMizMTk4ZC4rV9vrVcrt4tddovUeVWLk261aH9EiqM4JrfFec4ExxCphnzkEqFKU6lxblF4qiXasleMPUgSHbiD9v45qiN1D5UtwZDZD"
+
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type" : "domain_whitelisting",
+  "whitelisted_domains" : ["https://google.com"],
+  "domain_action_type": "add"
+}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAAPCcsph9SEBACkbwa3THaRHSHyInMiA8JCci34UnmzPi0hkwyZBYTIovAoOHTjRuDFZBZCMizMTk4ZC4rV9vrVcrt4tddovUeVWLk261aH9EiqM4JrfFec4ExxCphnzkEqFKU6lxblF4qiXasleMPUgSHbiD9v45qiN1D5UtwZDZD"
